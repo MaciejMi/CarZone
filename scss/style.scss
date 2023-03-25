@@ -273,7 +273,7 @@ a {
 				right: 0;
 				background-color: rgba(0, 0, 0, 0.8);
 				color: #fff;
-				clip-path: circle(0 at 50% 90%);
+				clip-path: circle(0 at 95% 5%);
 				transition: 0.8s;
 				z-index: 10;
 				p {
@@ -298,7 +298,7 @@ a {
 				opacity: 0;
 			}
 			button:hover ~ .card__text {
-				clip-path: circle(120% at 50% 90%);
+				clip-path: circle(120% at 90% 20%);
 			}
 			a {
 				position: absolute;

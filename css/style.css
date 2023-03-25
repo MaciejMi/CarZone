@@ -260,8 +260,8 @@ a {
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  -webkit-clip-path: circle(0 at 50% 90%);
-          clip-path: circle(0 at 50% 90%);
+  -webkit-clip-path: circle(0 at 95% 5%);
+          clip-path: circle(0 at 95% 5%);
   transition: 0.8s;
   z-index: 10;
 }
@@ -286,8 +286,8 @@ a {
   opacity: 0;
 }
 .shop__cards .card button:hover ~ .card__text {
-  -webkit-clip-path: circle(120% at 50% 90%);
-          clip-path: circle(120% at 50% 90%);
+  -webkit-clip-path: circle(120% at 90% 20%);
+          clip-path: circle(120% at 90% 20%);
 }
 .shop__cards .card a {
   position: absolute;
