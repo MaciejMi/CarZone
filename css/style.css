@@ -325,6 +325,61 @@ a {
   transform: scale(1.1);
 }
 
+.swiper {
+  padding: 7.5rem 1rem;
+}
+.swiper .card {
+  position: relative;
+  height: 400px;
+  width: 300px;
+  background-color: #d3d3d3;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.swiper .card__img {
+  width: 100%;
+  height: 100%;
+}
+.swiper .card__text-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 1.5rem;
+  text-align: center;
+}
+.swiper .card__title, .swiper .card__description {
+  color: #fff;
+}
+.swiper .card__title {
+  font-size: 3rem;
+}
+.swiper .card__description {
+  font-size: 1.8rem;
+}
+.swiper .card__shadow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.swiper .card__stars {
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  color: #cc1b1b;
+}
+.swiper .swiper-navBtn,
+.swiper .swiper-button-next {
+  color: #ffffff;
+}
+.swiper .swiper-pagination-bullet-active {
+  background-color: #000;
+}
+
 @media (min-width: 576px) {
   .header__image .bg-shadow .text-content h1 {
     font-size: 4.5rem;

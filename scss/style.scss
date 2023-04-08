@@ -340,6 +340,62 @@ a {
 	}
 }
 
+.swiper {
+	padding: 7.5rem 1rem;
+	.card {
+		position: relative;
+		height: 400px;
+		width: 300px;
+		background-color: #d3d3d3;
+		border-radius: 25px;
+		overflow: hidden;
+		&__img {
+			width: 100%;
+			height: 100%;
+		}
+		&__text-box {
+			display: flex;
+			flex-direction: column;
+			width: 80%;
+			gap: 1.5rem;
+			text-align: center;
+		}
+		&__title,
+		&__description {
+			color: c.$background-color;
+		}
+		&__title {
+			font-size: 3rem;
+		}
+		&__description {
+			font-size: 1.8rem;
+		}
+		&__shadow {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+		&__stars {
+			display: flex;
+			font-size: 2rem;
+			justify-content: center;
+			color: c.$red;
+		}
+	}
+	.swiper-navBtn,
+	.swiper-button-next {
+		color: #ffffff;
+	}
+	.swiper-pagination-bullet-active {
+		background-color: #000;
+	}
+}
+
 @media (min-width: 576px) {
 	.header {
 		&__image {
