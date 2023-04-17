@@ -134,6 +134,19 @@ a {
 	position: relative;
 	height: 100vh;
 	width: 100%;
+	&--shop {
+		height: 60vh;
+		.header__image {
+			background-image: url('../img/offer3.jpg');
+			.bg-shadow {
+				.text-content {
+					.button {
+						background-color: #000;
+					}
+				}
+			}
+		}
+	}
 	&__image {
 		position: absolute;
 		top: 0;

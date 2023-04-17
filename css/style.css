@@ -123,6 +123,15 @@ a {
   height: 100vh;
   width: 100%;
 }
+.header--shop {
+  height: 60vh;
+}
+.header--shop .header__image {
+  background-image: url("../img/offer3.jpg");
+}
+.header--shop .header__image .bg-shadow .text-content .button {
+  background-color: #000;
+}
 .header__image {
   position: absolute;
   top: 0;
