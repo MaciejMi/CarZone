@@ -68,6 +68,101 @@
         </div>
     </header>
 
+    <main class="main">
+        <section class="section shop-filter">
+            <div class="section__text-box">
+                <h3 class="section__title">Shop</h3>
+            </div>
+            <form>
+                <div>
+                    <p>Mark</p>
+                    <select name="mark">
+                        <option value="">-</option>
+                        <option value="">Audi</option>
+                        <option value="">Ford</option>
+                        <option value="">BMW</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Model</p>
+                    <select name="model">
+                        <option value="">-</option>
+                        <option value="">TT</option>
+                        <option value="">FUSION</option>
+                        <option value="">XS</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Year Of Create</p>
+                    <select name="year_of_create">
+                        <option value="">-</option>
+                        <option value="">2009</option>
+                        <option value="">2010</option>
+                        <option value="">2011</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Type of body</p>
+                    <select name="type_of_body">
+                        <option value="">-</option>
+                        <option value="">MPV</option>
+                        <option value="">SUV</option>
+                        <option value="">SEDAN</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Type Of Drive</p>
+                    <select name="type_of_drive">
+                        <option value="">-
+                        </option>
+                        <option value="">Drive on back axle
+                        </option>
+                        <option value="">Drive on both axles</option>
+                        <option value="">Automatic</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Color</p>
+                    <select name="color">
+                        <option value="">-
+                        </option>
+                        <option value="">red
+                        </option>
+                        <option value="">green</option>
+                        <option value="">blue</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Number Of Doors</p>
+                    <input type="number" name="number_of_doors" placeholder="Enter number of doors in your car">
+                </div>
+                <div>
+                    <p>Tire Size</p>
+                    <input type="text" name="tire_size" placeholder="Enter tire size in your car">
+                </div>
+                <div>
+                    <p class="tank_capacity_output">Tank capacity </p>
+                    <input type="range" min="10" max="100" value="50" name="tank_capacity" class="tank_capacity_input">
+                </div>
+                <div>
+                    <p class="minimum_cost_output">Minimum cost </p>
+                    <input type="range" min="1000" max="1000000" value="1000" name="minimum-cost"
+                        class="minimum_cost_input">
+                </div>
+                <div>
+                    <p class="maximum_cost_output">Maximum cost</p>
+                    <input type="range" min="1000" max="1000000" value="1000000" name="maximum-cost"
+                        class="maximum_cost_input">
+                </div>
+                <span>
+                    <p>Negotiative</p>
+                    <input type="checkbox" name="negotiative">
+                </span>
+                <button type="submit">Szukaj</button>
+            </form>
+        </section>
+    </main>
+
 </body>
 
 </html>

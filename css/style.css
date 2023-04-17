@@ -508,6 +508,45 @@ a {
   color: #fff;
 }
 
+.shop-filter form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.shop-filter form input,
+.shop-filter form select {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid transparent;
+  background-color: #eeeeee;
+}
+.shop-filter form input[type=range] {
+  padding: 1rem 0;
+}
+.shop-filter form div {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+.shop-filter form span {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+.shop-filter form button {
+  padding: 2rem 5rem;
+  margin: 0 auto;
+  width: 60%;
+  border-radius: 15px;
+  background-color: #cc1b1b;
+  color: #fff;
+}
+
 @media (min-width: 576px) {
   .header__image .bg-shadow .text-content h1 {
     font-size: 4.5rem;
@@ -533,6 +572,14 @@ a {
   }
   .login form {
     width: 400px;
+  }
+  .shop-filter form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .shop-filter form div {
+    width: 45%;
   }
 }
 @media (min-width: 768px) {
