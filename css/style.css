@@ -462,6 +462,43 @@ a {
   padding-top: 2rem;
 }
 
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.login form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.login form .info {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login form input {
+  padding: 1.2rem 2rem;
+  background-color: #eeeeee;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.login form a {
+  color: #cc1b1b;
+}
+.login form button {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  background-color: #cc1b1b;
+  color: #fff;
+}
+
 @media (min-width: 576px) {
   .header__image .bg-shadow .text-content h1 {
     font-size: 4.5rem;
@@ -481,6 +518,12 @@ a {
   }
   .shop__cards .card__text p {
     font-size: 2.5rem;
+  }
+  .login h1 {
+    font-size: 3rem;
+  }
+  .login form {
+    width: 400px;
   }
 }
 @media (min-width: 768px) {
@@ -528,5 +571,21 @@ a {
   }
   .section__description {
     font-size: 1.8rem;
+  }
+  .login h1 {
+    font-size: 4rem;
+  }
+  .login form {
+    width: 500px;
+    gap: 2rem;
+  }
+  .login form div {
+    gap: 1rem;
+  }
+  .login form input {
+    padding: 1.5rem 2.5rem;
+  }
+  .login form button {
+    padding: 1.5rem 2rem;
   }
 }/*# sourceMappingURL=style.css.map */
