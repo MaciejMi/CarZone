@@ -9,6 +9,26 @@ const minimumCostOutput = document.querySelector('.minimum_cost_output');
 const maximumCostInput = document.querySelector('.maximum_cost_input');
 const maximumCostOutput = document.querySelector('.maximum_cost_output');
 
+const body = document.querySelector('body');
+const carImages = document.querySelectorAll('.card__img');
+const promptElement = document.querySelector('.prompt');
+const promptImage = promptElement.querySelector('img');
+const promptCancel = promptElement.querySelector('button');
+
+promptCancel.addEventListener('click', () => {
+	promptElement.classList.add('d-none');
+	body.classList.remove('prompt-body');
+});
+
+for (const image of carImages) {
+	image.addEventListener('click', () => {
+		promptElement.classList.remove('d-none');
+		window.scrollTo(0, 0);
+		body.classList.add('prompt-body');
+		const src = image.getAttribute('src');
+		promptImage.setAttribute('src', src);
+	});
+}
 tankCapacityOutput.textContent = 'Tank Capacity: ' + tankCapacityInput.value + ' L';
 minimumCostOutput.textContent = 'Minimum cost: ' + minimumCostInput.value + ' ' + '000' + '€';
 maximumCostOutput.textContent = 'Maximum cost: ' + maximumCostInput.value + ' ' + '000' + '€';
