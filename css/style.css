@@ -734,6 +734,45 @@ a {
   color: #fff;
 }
 
+.basket {
+  padding-top: 16rem;
+}
+.basket .section__text-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.basket__list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.basket__list .card {
+  max-width: 800px;
+  text-align: center;
+  padding: 2rem;
+}
+.basket__list .card img {
+  width: 100%;
+}
+.basket__list .card .text {
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.basket__list .card .text button {
+  position: absolute;
+  right: 20px;
+}
+.basket__list .btn {
+  padding: 1rem 3rem;
+  background-color: #cc1b1b;
+  color: #fff;
+  border-radius: 15px;
+}
+
 @media (min-width: 576px) {
   .header__image .bg-shadow .text-content h1 {
     font-size: 4.5rem;
