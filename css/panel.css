@@ -1,0 +1,245 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #1a1a2f;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nav {
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #26263e;
+}
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__title {
+  font-size: 2.5rem;
+}
+.nav a {
+  color: #fff;
+}
+.nav__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav__profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header {
+  padding-top: 16rem;
+  width: 100%;
+  height: 100vh;
+}
+.header a {
+  color: #fff;
+}
+.header__image {
+  position: relative;
+  margin: 0 auto 5rem;
+  border-radius: 20px;
+  width: 250px;
+  height: 400px;
+  background-image: url("../img/welcome.jpg");
+  border: 5px solid #fff;
+  overflow: hidden;
+}
+.header__image .shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.header__image .shadow h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  color: #fff;
+  font-size: 1.8rem;
+}
+.header__image .shadow h1 span {
+  font-size: 4rem;
+}
+.header__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.header__menu .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.header__menu .cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+  background-color: #222235;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  font-size: 3rem;
+  transition: background-color 1s;
+}
+.header__menu .cards .card:hover {
+  background-color: #cc1b1b;
+  border: 0;
+}
+.header .btn {
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  background-color: #cc1b1b;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 5rem;
+  transition: background-color 1s;
+}
+.header .btn:hover {
+  background: none;
+  border: 1px solid #fff;
+}
+
+.my-account {
+  padding-top: 12rem;
+}
+.my-account form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40%;
+  margin: 0 auto;
+}
+.my-account form input,
+.my-account form textarea {
+  margin: 0 auto;
+  padding: 2rem;
+  width: 60%;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.my-account form textarea {
+  height: 150px;
+}
+.my-account form .image-input {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+}
+.my-account form .image-input img {
+  border-radius: 25px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.my-account form .image-input input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 2;
+}
+.my-account form .image-input p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 3rem;
+  z-index: 1;
+}
+.my-account form .image-input .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+}
+.my-account form .image-input textarea {
+  resize: none;
+}
+.my-account form button {
+  padding: 1rem 3rem;
+  color: #fff;
+  background-color: #cc1b1b;
+  border-radius: 10px;
+  width: 40%;
+  margin: 0 auto;
+  transition: background-color 0.3s;
+}
+.my-account form button:hover {
+  background: none;
+  border: 1px solid #fff;
+}
+
+@media (min-width: 576px) {
+  .header__image {
+    width: 500px;
+    height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .header__image {
+    width: 650px;
+    height: 350px;
+  }
+}
+@media (min-width: 992px) {
+  .header__image {
+    width: 800px;
+    height: 400px;
+  }
+}/*# sourceMappingURL=panel.css.map */
