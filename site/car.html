@@ -18,6 +18,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Swiper scripts -->
+    <script src="../js/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Main script js -->
@@ -25,6 +30,7 @@
 </head>
 
 <body>
+
     <nav class="nav">
         <div class="wrapper">
             <a href="#" class="nav__title">Car Zone</a>
@@ -53,7 +59,125 @@
             <a href="#" class="nav__item nav__button">Get Started</a>
         </div>
     </nav>
-
+    <main class="main">
+        <section class="section car">
+            <div class="section__text-box">
+                <h1 class="section__header">Lamborghini Aventador LP 750-4 Superveloce Roadster
+                </h1>
+                <h2 class="section__title">5 900 000 €</h2>
+                <p class="section__description">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium consectetur consequatur et
+                    perspiciatis hic praesentium ea asperiores nam iusto adipisci velit cum, consequuntur sunt
+                    distinctio illum dolorem doloribus laborum corporis. Eaque modi veritatis porro nulla architecto
+                    rem, fugiat expedita pariatur, sit quis laboriosam saepe tempore doloribus ab, inventore dolores!
+                    Quam, fugiat pariatur. Enim sit provident odit repellat debitis quia veniam aliquam. Debitis error
+                    tenetur voluptatibus, sunt officiis itaque recusandae mollitia voluptatem quasi ipsa ea.
+                    Voluptate
+                </p>
+                <p class="section__description">
+                    Sapiente eligendi laborum sunt nam nesciunt harum
+                    architecto rerum possimus. Magnam dicta molestiae ipsa animi veritatis porro, culpa beatae adipisci,
+                    cum, a ullam eligendi vero sunt voluptate rerum reprehenderit consequatur ea repudiandae deserunt.
+                    Nihil doloribus aliquid cumque ipsum. Optio nostrum aliquid natus quod laborum molestiae nemo,</p>
+                <p class="section__description">
+                    sapiente quasi ex. Possimus pariatur aut labore officiis, corrupti
+                    error natus quae iure sint nam
+                    aliquam hic debitis voluptatem autem cum, iste veniam dolores enim provident, soluta sit odio
+                    quaerat. Deleniti fugit, soluta neque inventore fuga exercitationem doloremque commodi nam? Dolore
+                    ex ipsum ea consectetur a iure in voluptas sed, fuga excepturi culpa maxime quam reiciendis
+                    voluptates. Nihil veritatis, natus explicabo error, beatae magni ipsum neque accusantium vitae
+                    commodi distinctio, quae doloribus. Provident aliquam alias aspernatur deserunt fugit quis modi,
+                    repellendus corrupti, porro labore, ducimus itaque voluptate atque.
+                </p>
+            </div>
+            <div class="info">
+                <div class="cost">
+                    <h2>5 900 000 €</h2>
+                    <div>
+                        <a href="#">Kup teraz</a>
+                        <a href="#">Zadzowń</a>
+                    </div>
+                </div>
+                <a href='#' class="profile">
+                    <div class="div">
+                        <p>Jan Kowalski</p>
+                        <p>(Świętokrzyskie)</p>
+                    </div>
+                    <img src="../img/customer3.jpg" alt="">
+                </a>
+            </div>
+        </section>
+        <section class="section swiper">
+            <div class="section__text-box">
+                <h3 class="section__header">Images</h3>
+            </div>
+            <div class="slide-container">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <img src="../img/offer2.jpg" class="card__img">
+                    </div>
+                    <div class="card swiper-slide">
+                        <img src="../img/offer3.jpg" class="card__img">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </section>
+        <section class="section details">
+            <div class="section__text-box">
+                <h3 class="section__header">Details</h3>
+            </div>
+            <div>
+                <p><span>Mark:</span><span>BMW</span></p>
+                <p><span>Model:</span> <span> A5</span></p>
+                <p><span>Type Of Drive:</span> <span> lorem</span></p>
+                <p><span>Type of body:</span> <span> SUV</span></p>
+                <p><span>Color:</span><span> red</span></p>
+                <p><span>Number of Doors:</span><span> 5</span></p>
+                <p><span>Tire size:</span> <span> 52/1C22/D2</span></p>
+                <p><span>Tank Capacity:</span> <span> 20</span></p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer section">
+        <div class="footer__top">
+            <div class="newsletter">
+                <h2>CarZone</h2>
+                <p>Join our newsletter to stay up to date on features and realses.</p>
+                <form action="">
+                    <input type="text" placeholder="Enter your email">
+                    <button type="submit">Subsribe</button>
+                </form>
+            </div>
+            <div>
+                <p>Main Site</p>
+                <a href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Services</a>
+                <a href="#">Reviews</a>
+                <a href="#">Cotact</a>
+            </div>
+            <div>
+                <p>Subsite</p>
+                <a href="#">Car Shop</a>
+                <a href="#">Log in</a>
+                <a href="#">Sign in</a>
+                <a href="#">Admin panel</a>
+            </div>
+            <div>
+                <p>Follow us</p>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Linkedlin</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2023 Carzone. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

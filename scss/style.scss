@@ -576,6 +576,77 @@ a {
 	}
 }
 
+.car {
+	padding-top: 16rem;
+	.info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+	.profile {
+		justify-content: flex-end;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		p {
+			font-size: 1.8rem;
+		}
+		img {
+			border: 5px solid c.$red;
+			border-radius: 50%;
+			width: 80px;
+			height: 80px;
+		}
+	}
+	.cost {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		div {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+		a {
+			padding: 1rem 3rem;
+			background-color: c.$red;
+			color: #fff;
+			border-radius: 10px;
+			&:last-of-type {
+				background-color: #eee;
+				color: c.$red;
+			}
+		}
+	}
+	.section__text-box {
+		gap: 1rem;
+		width: 100%;
+		p {
+			text-indent: 25px;
+		}
+	}
+}
+
+.details {
+	div {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+		p {
+			padding: 1rem 4rem;
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			font-size: 1.8rem;
+			border-radius: 25px;
+			background-color: #eee;
+		}
+	}
+}
+
 @media (min-width: 576px) {
 	.header {
 		&__image {
@@ -626,6 +697,24 @@ a {
 
 			div {
 				width: 45%;
+			}
+		}
+	}
+	.car {
+		.cost {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+			div {
+				flex-direction: row;
+			}
+		}
+	}
+	.details {
+		div {
+			p {
+				width: 49%;
+				font-size: 2rem;
 			}
 		}
 	}

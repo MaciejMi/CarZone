@@ -17,10 +17,10 @@ tankCapacityInput.addEventListener('input', () => {
 	tankCapacityOutput.textContent = 'Tank Capacity: ' + tankCapacityInput.value + ' L';
 });
 minimumCostInput.addEventListener('input', () => {
-	minimumCostOutput.textContent = 'Minimum cost: ' + minimumCostInput.value + ' ' + '000' + '€';
+	minimumCostOutput.textContent = 'Minimum cost: ' + minimumCostInput.value + ' ' + '000' + ' €';
 });
 maximumCostInput.addEventListener('input', () => {
-	maximumCostOutput.textContent = 'Maximum cost: ' + maximumCostInput.value + ' ' + '000' + '€';
+	maximumCostOutput.textContent = 'Maximum cost: ' + maximumCostInput.value + ' ' + '000' + ' €';
 });
 
 const removeActiveHandler = () => {

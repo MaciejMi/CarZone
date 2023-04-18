@@ -547,6 +547,75 @@ a {
   color: #fff;
 }
 
+.car {
+  padding-top: 16rem;
+}
+.car .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.car .profile {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.car .profile p {
+  font-size: 1.8rem;
+}
+.car .profile img {
+  border: 5px solid #cc1b1b;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.car .cost {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.car .cost div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.car .cost a {
+  padding: 1rem 3rem;
+  background-color: #cc1b1b;
+  color: #fff;
+  border-radius: 10px;
+}
+.car .cost a:last-of-type {
+  background-color: #eee;
+  color: #cc1b1b;
+}
+.car .section__text-box {
+  gap: 1rem;
+  width: 100%;
+}
+.car .section__text-box p {
+  text-indent: 25px;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.details div p {
+  padding: 1rem 4rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  border-radius: 25px;
+  background-color: #eee;
+}
+
 @media (min-width: 576px) {
   .header__image .bg-shadow .text-content h1 {
     font-size: 4.5rem;
@@ -580,6 +649,18 @@ a {
   }
   .shop-filter form div {
     width: 45%;
+  }
+  .car .cost {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .car .cost div {
+    flex-direction: row;
+  }
+  .details div p {
+    width: 49%;
+    font-size: 2rem;
   }
 }
 @media (min-width: 768px) {
