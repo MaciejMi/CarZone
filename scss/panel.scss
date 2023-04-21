@@ -418,6 +418,63 @@ a {
 	}
 }
 
+.my-balance {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	h1 {
+		color: #fff;
+		text-align: center;
+		font-size: 3rem;
+	}
+	.boxes {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 1rem;
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			text-transform: capitalize;
+			gap: 1rem;
+			width: 100%;
+			max-width: 250px;
+			height: 250px;
+			background-color: #222235;
+			border-radius: 25px;
+			background-color: rgb(172, 0, 0);
+			color: #fff;
+			&:first-of-type {
+				background-color: rgb(71, 255, 71);
+				color: #000;
+			}
+			&:last-of-type {
+				background-color: rgb(194, 207, 2);
+				color: #000;
+			}
+			p {
+				&:first-of-type {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+	a {
+		margin: 0 auto;
+		padding: 2rem 4rem;
+		background-color: c.$red;
+		width: fit-content;
+		border-radius: 25px;
+		color: #fff;
+		text-align: center;
+		font-size: 3rem;
+	}
+}
+
 @media (min-width: 576px) {
 	.edit-offer {
 		.file-container {
@@ -445,6 +502,15 @@ a {
 		input,
 		textarea {
 			width: 45%;
+		}
+	}
+	.my-balance {
+		.boxes {
+			flex-direction: row;
+			div {
+				max-width: 350px;
+				height: 350px;
+			}
 		}
 	}
 }
