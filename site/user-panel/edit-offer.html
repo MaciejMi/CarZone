@@ -21,7 +21,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../../css/panel.css">
     <!-- Main script js -->
-    <script src="../../js/main.js" defer></script>
+    <script src="../../js/add-file-input.js" defer></script>
 </head>
 
 <body>
@@ -35,25 +35,26 @@
         </div>
     </nav>
     <main class="main">
-        <section class="my-account">
-            <form action="">
-                <div class="image-input">
-                    <img src="../../img/customer3.jpg" alt="">
-                    <input type="file">
-                    <p>Zmień zdjęcie</p>
-                    <div class="shadow"></div>
+        <section class="edit-offer">
+            <h1>Edit offer Lamborghini A5S3 CD2</h1>
+            <form>
+                <div class="form-container">
+                    <input type="text" name="title" placeholder="Enter name of your car">
+                    <input type="number" name="price" placeholder="Enter pirce of your car">
+                    <input type="text" name='mark' placeholder="Enter your mark">
+                    <input type="text" name='model' placeholder="Enter your model">
+                    <input type="text" name='type-of-drive' placeholder="Enter your type-of-drive">
+                    <input type="text" name='type-of-body' placeholder="Enter your type-of-body">
+                    <input type="text" name='color' placeholder="Enter your color">
+                    <input type="text" name='number-of-doors' placeholder="Enter your number of doors">
+                    <input type="text" name='tire-size' placeholder="Enter your tire-size">
+                    <input type="text" name='tank-capacity' placeholder="Enter your tank-capacity">
                 </div>
-                <div class="stars">
-                    <i class="ti ti-star-filled"></i>
-                    <i class="ti ti-star-filled"></i>
-                    <i class="ti ti-star-filled"></i>
-                    <i class="ti ti-star-filled"></i>
-                    <i class="ti ti-star-filled"></i>
+                <textarea name="description" placeholder="Enter your description"></textarea>
+                <input id="number-of-files" type="number" min='0' max='3'
+                    placeholder="How many photos would you add to offer?">
+                <div class="file-container">
                 </div>
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
-                <input type="text" placeholder="Phone number">
-                <textarea placeholder="Description" name=""></textarea>
                 <button type="submit">Edit</button>
             </form>
         </section>

@@ -377,7 +377,51 @@ a {
   border: 1px solid #fff;
 }
 
+.edit-offer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.edit-offer textarea {
+  height: 200px;
+}
+.edit-offer h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.edit-offer input,
+.edit-offer button,
+.edit-offer textarea {
+  padding: 1rem 2rem;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  resize: none;
+}
+.edit-offer .form-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.edit-offer .file-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.edit-offer .file-container input {
+  max-width: 200px;
+  width: 100%;
+}
+
 @media (min-width: 576px) {
+  .edit-offer .file-container input {
+    max-width: 500px;
+  }
   .my-account form .image-input {
     max-width: 500px;
     width: 100%;
@@ -385,6 +429,10 @@ a {
   .header__image {
     width: 500px;
     height: 300px;
+  }
+  .edit-offer input,
+  .edit-offer textarea {
+    width: 45%;
   }
 }
 @media (min-width: 768px) {
@@ -396,10 +444,16 @@ a {
     width: 650px;
     height: 350px;
   }
+  .edit-offer .file-container input {
+    max-width: 600px;
+  }
 }
 @media (min-width: 992px) {
   .header__image {
     width: 800px;
     height: 400px;
+  }
+  .edit-offer .file-container input {
+    max-width: 700px;
   }
 }/*# sourceMappingURL=panel.css.map */
