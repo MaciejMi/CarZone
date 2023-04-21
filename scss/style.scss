@@ -50,9 +50,14 @@ a {
 	}
 
 	&__title {
+		display: flex;
+		align-items: center;
 		font-weight: bold;
 		font-size: 2rem;
 		transition: color 0.3s;
+		img {
+			width: 50px;
+		}
 		&:hover {
 			color: c.$red;
 		}

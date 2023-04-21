@@ -47,7 +47,13 @@ a {
   align-items: center;
 }
 .nav__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 2.5rem;
+}
+.nav__title img {
+  width: 50px;
 }
 .nav a {
   color: #fff;

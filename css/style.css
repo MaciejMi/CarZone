@@ -48,9 +48,14 @@ a {
   justify-content: space-between;
 }
 .nav__title {
+  display: flex;
+  align-items: center;
   font-weight: bold;
   font-size: 2rem;
   transition: color 0.3s;
+}
+.nav__title img {
+  width: 50px;
 }
 .nav__title:hover {
   color: #cc1b1b;
