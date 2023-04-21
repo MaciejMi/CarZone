@@ -474,6 +474,52 @@ a {
   font-size: 3rem;
 }
 
+.my-transactions {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.my-transactions h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+}
+.my-transactions .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 2rem 4rem;
+  border-radius: 25px;
+  background-color: #222235;
+  color: #fff;
+  text-align: center;
+}
+.my-transactions .box__title {
+  font-size: 3rem;
+}
+.my-transactions .box__price {
+  font-size: 2rem;
+}
+.my-transactions .box img {
+  border-radius: 10px;
+  max-height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  max-width: 200px;
+}
+.my-transactions .box a {
+  color: #fff;
+  text-transform: capitalize;
+  padding: 1rem 3rem;
+  background-color: #cc1b1b;
+  border-radius: 10px;
+}
+
 @media (min-width: 576px) {
   .edit-offer .file-container input {
     max-width: 500px;
