@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	padding: 1rem;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 2rem;
+	height: 100vh;
+	font-size: 1.6rem;
+	font-family: 'Roboto', sans-serif;
+}
+
+img {
+	width: 100px;
+}
+
+button {
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+h1 {
+	text-align: center;
+	font-size: 6rem;
+}
+
+.btn {
+	background-color: #cc1b1b;
+	padding: 1rem 3rem;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	border-radius: 25px;
+} /*# sourceMappingURL=error.css.map */
