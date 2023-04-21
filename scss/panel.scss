@@ -446,16 +446,9 @@ a {
 			height: 250px;
 			background-color: #222235;
 			border-radius: 25px;
-			background-color: rgb(172, 0, 0);
+			background-color: #222235;
 			color: #fff;
-			&:first-of-type {
-				background-color: rgb(71, 255, 71);
-				color: #000;
-			}
-			&:last-of-type {
-				background-color: rgb(194, 207, 2);
-				color: #000;
-			}
+
 			p {
 				&:first-of-type {
 					font-size: 3rem;
