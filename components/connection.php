@@ -2,7 +2,7 @@
 define ('USER', 'root');
 define ('PASSWORD', '');
 define ('HOST', 'localhost');
-define ('DATABASE', 'carzdone_db');
+define ('DATABASE', 'carzone_db');
 define('SYSTEM', 'mysql');
 
 $path = './';

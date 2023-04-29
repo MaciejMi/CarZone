@@ -1,3 +1,47 @@
+<?php
+    session_start();
+    require_once '../components/connection.php';
+    require '../components/authentication.php';
+    
+    if (!isset($_SESSION['logged']))
+    {
+        $_SESSION['logged'] = false;    
+    }else{
+        if ($_SESSION['logged']){
+            header('Location: ../index.php');
+        }
+    }
+    
+    if (isset($_GET['token']) && isset($_GET['email'])){
+
+        $query_str = "SELECT users.email FROM users WHERE users.verification_code = " . $_GET['token'] . ";"; 
+        $query = $conn -> query($query_str);
+        $result = $query -> fetch();
+        if ($result){
+            $query_str = "UPDATE users SET users.status = 1 WHERE users.email ='" . $_GET['email'] . "';";
+            $conn -> query($query_str);
+            header("Location: ./login.php?message=Your email have been verificated!");
+        }
+    }
+
+    
+    $email = trim($_POST['email'] ?? NULL) ;
+    $password = trim($_POST['password'] ?? NULL);
+
+    if (!(is_null($email) || is_null($password))){
+        $query_str = "SELECT users.passhash FROM users WHERE users.status = 1 AND users.email ='" . $email . "';";
+        $query = $conn -> query($query_str);
+        $result = $query->fetch();
+        if ($result){
+            if(password_verify($password, $result[0])){
+                $_SESSION['logged'] = true;
+                header('Location: ../index.php');
+            }
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -28,16 +72,23 @@
 <body>
     <section class="section login">
         <h1>Login</h1>
-        <form>
+        <form method = "POST">
             <div>
                 <label for="email">Email</label>
-                <input type="text" name="email" placeholder="Enter your email">
+                <input type="text" name="email" placeholder="Enter your email" required>
             </div>
             <div>
                 <div class="info"> <label for="password">Password</label> <a href="#">Forgot password?</a></div>
-                <input type="password" name="password" placeholder="Enter your password">
+                <input type="password" name="password" placeholder="Enter your password" required>
             </div>
             <button type="submit" class="btn">Login</button>
+            <p>
+                <?php 
+                    if (isset($_GET['message'])):
+                ?>
+                    <p><?= $_GET['message'] ?></p>
+                <?php endif;?>
+            </p>
             <div class="info">
                 <p>Don't have account? </p> <a href="./sign-up.html"> Create new account </a>
             </div>
