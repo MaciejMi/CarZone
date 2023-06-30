@@ -2,9 +2,6 @@ const navMenuBtn = document.querySelector('nav button.nav__menu');
 const navLinksMb = document.querySelector('.nav__links--mobile');
 const navItemsMb = navLinksMb.querySelectorAll('.nav__item');
 
-
-
-
 const removeActiveHandler = () => {
 	navMenuBtn.classList.toggle('active');
 	navLinksMb.classList.toggle('active');

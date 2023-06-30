@@ -33,6 +33,10 @@ a {
   width: 100%;
 }
 
+.error {
+  color: #cc1b1b;
+}
+
 .nav {
   position: fixed;
   top: 0;

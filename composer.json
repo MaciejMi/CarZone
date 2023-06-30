@@ -1,0 +1,22 @@
+{
+	"name": "macie/car-zone",
+	"description": "Online shop where you can buy used cars.",
+	"type": "webiste",
+	"autoload": {
+		"psr-4": {
+			"Macie\\CarZone\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Maciej Michalczyk",
+			"email": "maciejmich22@gmail.com"
+		},
+		{
+			"name": "Gabriel Wiącek"
+		}
+	],
+	"require": {
+		"phpmailer/phpmailer": "^6.8"
+	}
+}
