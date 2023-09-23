@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    require_once('./components/connection.php');
+    require_once('./components/getters/getCars.php');
+    require_once('./components/setters/setNewsletter.php');
+    require_once('./components/errorPath.php');
+
+    $newsletterEmail = $_POST['newsletterEmail'] ?? NULL;
+    setNewsletter($conn, $path, $newsletterEmail);
+
+    $cars = getCars($conn, $path);
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -35,17 +48,23 @@
     <nav class="nav">
         <div class="wrapper">
             <a href="#" class="nav__title">
-                <img src="./img/logo.png" alt="">
+                <img src="./img/logo.png" alt="Red car in a circle">
                 Car Zone</a>
             <div class="nav__links nav__links--desktop ">
                 <a href="#about-us" class="nav__item">About Us</a>
-                <a href="./site/shop.html" class="nav__item">Shop</a>
+                <a href="./site/shop.php" class="nav__item">Shop</a>
                 <a href="#reviews" class="nav__item">Reviews</a>
                 <a href="#contact" class="nav__item">Contact</a>
             </div>
             <div class="nav__buttons nav__buttons--desktop">
-                <a href="./site/login.html" class="nav__button">Log in</a>
-                <a href="./site/sign-up.html" class="nav__button">Get Started</a>
+             
+            <?php if (isset($_SESSION['isLogged'])): ?>
+                    <a href="./site/user-panel/index.php" class = "profile_link">   <img src="data:image/png;base64 , <?= base64_encode($_SESSION['image']) ?>" alt = "your profile image" > <?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?> </a>
+            <?php else: ?>
+                    <a href="./site/login.php" class="nav__button">Log in</a>
+                    <a href="./site/sign-up.php" class="nav__button">Get Started</a>
+            <?php endif;?>
+                    
             </div>
             <button class="nav__menu">
                 <div class="bar"></div>
@@ -55,11 +74,15 @@
         </div>
         <div class="nav__links nav__links--mobile ">
             <a href="#about-us" class="nav__item">About Us</a>
-            <a href="./site/shop.html" class="nav__item">Shop</a>
+            <a href="./site/shop.php" class="nav__item">Shop</a>
             <a href="#reviews" class="nav__item">Reviews</a>
             <a href="#contact" class="nav__item">Contact</a>
-            <a href="./site/login.html" class="nav__button">Log in</a>
-            <a href="./site/sign-up.html" class="nav__button">Get Started</a>
+            <?php if (isset($_SESSION['isLogged'])): ?>
+                    <a href="./site/user-panel/index.php" class = "profile_link">   <img src="data:image/png;base64 <?= base64_encode($_SESSION['image']) ?>" alt = "your profile image" > <?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?> </a>
+            <?php else: ?>
+                    <a href="./site/login.php" class="nav__button">Log in</a>
+                    <a href="./site/sign-up.php" class="nav__button">Get Started</a>
+            <?php endif;?>
         </div>
     </nav>
     <header class="header">
@@ -72,7 +95,7 @@
                     <p>Our cars are of excellent quality. In addition, after the purchase, we </br /> guarantee a
                         one-time free
                         vulcanization in our mechanical showroom.</p>
-                    <a href="./site/shop.html" class=" button">Check our shop</a>
+                    <a href="./site/shop.php" class=" button">Check our shop</a>
                 </div>
             </div>
         </div>
@@ -103,106 +126,31 @@
                 <p class="section__description">
                     More options can be found on the shop's subpage.</p>
             </div>
+            <?php if (!empty($cars)): ?>
             <div class="shop__cards">
+                <?php foreach($cars as $car): ?>
                 <div class="card">
                     <button><i class="ti ti-alert-circle"></i></button>
-                    <a href="./site/car.html">Buy this car </a>
+                    <a href="./site/car.php?vin=<?= $car['vin'] ?>">Buy this car </a>
                     <div class="card__description">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
+                        <p> <?= $car['mark'] .' '. $car['model'] ?> </p>
+                        <p> <?= $car['price'] . ' €' ?></p>
+                        <p> <?= $car['type_of_body'] ?></p>
                     </div>
                     <div class="card__text">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                        <p>2019</p>
-                        <p>3000km</p>
-                        <p>3201 cm3</p>
+                        <p> <?= $car['mark'].' '. $car['model'] ?> </p>
+                        <p> <?= $car['price'] . ' €' ?> </p>
+                        <p> <?= $car['year_of_create'] ?> </p>
+                        <p> <?= $car['mileage'] .' km' ?> </p>
+                        <p> <?= $car['tank_capacity'] . 'L' ?> </p>
                     </div>
-
-                    <img src="./img/offer1.webp" class="card__image">
+                    <img src="data:image/png;base64,<?= base64_encode($car['image']) ?>" alt="here you will find a photo of the car" class="card__image">
                 </div>
-                <div class="card">
-                    <button><i class="ti ti-alert-circle"></i></button>
-                    <a href="./site/car.html">Buy this car </a>
-                    <div class="card__description">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                    </div>
-                    <div class="card__text">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                        <p>2019</p>
-                        <p>3000km</p>
-                        <p>3201 cm3</p>
-                    </div>
-                    <img src="./img/offer2.jpg" class="card__image">
-                </div>
-                <div class="card">
-                    <button><i class="ti ti-alert-circle"></i></button>
-                    <a href="./site/car.html">Buy this car </a>
-                    <div class="card__description">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                    </div>
-                    <div class="card__text">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                        <p>2019</p>
-                        <p>3000km</p>
-                        <p>3201 cm3</p>
-                    </div>
-                    <img src="./img/about-us.jpg" class="card__image">
-                </div>
-                <div class="card">
-                    <button><i class="ti ti-alert-circle"></i></button>
-                    <a href="./site/car.html">Buy this car </a>
-                    <div class="card__description">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                    </div>
-                    <div class="card__text">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                        <p>2019</p>
-                        <p>3000km</p>
-                        <p>3201 cm3</p>
-                    </div>
-                    <img src="./img/offer5.jfif" class="card__image">
-                </div>
-                <div class="card">
-                    <button><i class="ti ti-alert-circle"></i></button>
-                    <a href="./site/car.html">Buy this car </a>
-                    <div class="card__description">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                    </div>
-                    <div class="card__text">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                        <p>2019</p>
-                        <p>3000km</p>
-                        <p>3201 cm3</p>
-                    </div>
-                    <img src="./img/offer4.webp" class="card__image">
-                </div>
-                <div class="card">
-                    <button><i class="ti ti-alert-circle"></i></button>
-                    <a href="./site/car.html">Buy this car </a>
-                    <div class="card__description">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                    </div>
-                    <div class="card__text">
-                        <p> Lamborghini Aventador LP 750-4 Superveloce Roadster</p>
-                        <p> 49 000 EURO</p>
-                        <p>2019</p>
-                        <p>3000km</p>
-                        <p>3201 cm3</p>
-                    </div>
-                    <img src="./img/offer3.jpg" class="card__image">
-                </div>
+                <?php endforeach; else: ?>
+                    <p>No matching car offers found.</p>
+                <?php endif; ?>
             </div>
-            <a class="more-cars" href="./site/shop.html">More</a>
+            <a class="more-cars" href="./site/shop.php">More</a>
         </section>
     </main>
     <section class="section swiper" id='reviews'>
@@ -214,7 +162,7 @@
         <div class="slide-container">
             <div class="card-wrapper swiper-wrapper">
                 <div class="card swiper-slide">
-                    <img src="./img/customer.jpg" class="card__img">
+                    <img src="./img/customer.jpg" alt = "photo of the reviewer - Elizabeth Swann" class="card__img">
                     <div class="card__shadow">
                         <div class="card__text-box">
                             <p class="card__title">Elizabeth Swann</p>
@@ -232,7 +180,7 @@
                     </div>
                 </div>
                 <div class="card swiper-slide">
-                    <img src="./img/customer2.jpg" class="card__img">
+                    <img src="./img/customer2.jpg" alt = "photo of the reviewer - Jan Kowalski" class="card__img">
                     <div class="card__shadow">
                         <div class="card__text-box">
                             <p class="card__title">Jan Kowalski</p>
@@ -250,7 +198,7 @@
                     </div>
                 </div>
                 <div class="card swiper-slide">
-                    <img src="./img/customer3.jpg" class="card__img">
+                    <img src="./img/customer3.jpg" alt = "photo of the reviewer - Jan Duda" class="card__img">
                     <div class="card__shadow">
                         <div class="card__text-box">
                             <p class="card__title">Jan Duda</p>
@@ -268,7 +216,7 @@
                     </div>
                 </div>
                 <div class="card swiper-slide">
-                    <img src="./img/customer4.jpg" class="card__img">
+                    <img src="./img/customer4.jpg" alt = "photo of the reviewer - Jack Sparrow" class="card__img">
                     <div class="card__shadow">
                         <div class="card__text-box">
                             <p class="card__title">Jack Sparrow</p>
@@ -286,7 +234,7 @@
                     </div>
                 </div>
                 <div class="card swiper-slide">
-                    <img src="./img/customer5.webp" class="card__img">
+                    <img src="./img/customer5.webp" alt = "photo of the reviewer - Hector Barbossa" class="card__img">
                     <div class="card__shadow">
                         <div class="card__text-box">
                             <p class="card__title">Hector Barbossa</p>
@@ -332,8 +280,8 @@
             <div class="newsletter">
                 <h2>CarZone</h2>
                 <p>Join our newsletter to stay up to date on features and realses.</p>
-                <form action="">
-                    <input type="text" placeholder="Enter your email">
+                <form method = "POST">
+                    <input type="email" name = "newsletterEmail" required placeholder="Enter your email">
                     <button type="submit">Subsribe</button>
                 </form>
             </div>
@@ -347,10 +295,10 @@
             </div>
             <div>
                 <p>Subsite</p>
-                <a href="./site/shop.html">Car Shop</a>
-                <a href="./site/login.html">Log in</a>
-                <a href="./site/sign-up.html">Sign in</a>
-                <a href="./site/user-panel/index.html">User panel</a>
+                <a href="./site/shop.php">Car Shop</a>
+                <a href="./site/login.php">Log in</a>
+                <a href="./site/sign-up.php">Sign in</a>
+                <a href="./site/user-panel/index.php">User panel</a>
             </div>
             <div>
                 <p>Follow us</p>

@@ -1,3 +1,27 @@
+<?php
+  error_reporting(E_ERROR | E_PARSE);
+  session_start(); 
+  require_once('../components/connection.php');
+  require_once('../components/getters/getloggingInCheck.php');
+  require_once('../components/setters/addAcount.php');
+  require_once('../components/validates/namesValidate.php');
+  require_once('../components/validates/emailsValidate.php');
+  require_once('../components/errorPath.php');
+  
+  $datas = array(
+    'lastname' => trim($_POST['lastname']) ?? NULL,
+    'firstname' => trim($_POST['firstname']) ?? NULL,
+    'email' => trim($_POST['email']) ?? NULL,
+    'phone_number' => trim($_POST['phone_number']) ?? NULL,
+    'password_1' => trim($_POST['password_1']) ?? NULL,
+    'password_2' => trim($_POST['password_2']) ?? NULL,
+    'image' => $_FILES['profile_image'] ?? NULL
+  );
+
+  $message = addAcount($conn, $path, $datas)
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -23,21 +47,21 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Main script js -->
-    <script src="../js/main.js" defer></script>
+    <!-- <script src="../js/main.js" defer></script> -->
 </head>
 
 <body>
     <section class="section login">
         <h1>Sign up</h1>
-        <form method='POST' action='./sign-up.php?message=We have sent you verification code to your email!'>
+        <form method='POST' action='./sign-up.php' enctype="multipart/form-data">
             <div>
-                <label for="lastName">Last name</label>
-                <input type="text" name="lastName" minlength='2' maxlength='80' placeholder="Enter your last name"
+                <label for="lastname">Last name</label>
+                <input type="text" name="lastname" minlength='2' maxlength='80' placeholder="Enter your last name"
                     required>
             </div>
             <div>
-                <label for="firstName">First name</label>
-                <input type="text" name="firstName" minlength='2' maxlength='80' placeholder="Enter your first name"
+                <label for="firstname">First name</label>
+                <input type="text" name="firstname" minlength='2' maxlength='80' placeholder="Enter your first name"
                     required>
             </div>
             <div>
@@ -45,8 +69,8 @@
                 <input type="text" name="email" minlength='5' maxlength='80' placeholder="Enter your email" required>
             </div>
             <div>
-                <label for="phoneNumber">Phone number (123-123-123)</label>
-                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" name="phoneNumber"
+                <label for="phone_number">Phone number (123-123-123)</label>
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" name="phone_number"
                     placeholder="Enter your phone number [fx. 123-123-123]" required>
             </div>
             <div>
@@ -59,9 +83,16 @@
                 <input type="password" name="password_2" minlength='8' maxlength="80" placeholder="Enter your password"
                     required>
             </div>
+            <div>
+                <label for="password_2">Profile image</label>
+                <input type="file" name="profile_image" required>
+            </div>
+            <?php if (isset($message)): ?>
+            <p class="error"><?= $message ?></p>
+            <?php endif; ?>
             <button type="submit" class="btn">Sign in</button>
             <div class="info">
-                <p>Do you have an account? </p> <a href="./login.html"> Login </a>
+                <p>Do you have an account? </p> <a href="./login.php"> Login </a>
             </div>
         </form>
     </section>

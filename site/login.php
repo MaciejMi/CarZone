@@ -1,3 +1,26 @@
+<?php
+    session_start(); 
+    require_once('../components/connection.php');
+    require_once('../components/getters/getloggingInCheck.php');
+    require_once('../components/errorPath.php');
+     
+    $getLoggingInCheck = getloggingInCheck($conn, $path, $_POST['email'] ?? NULL, $_POST['password'] ?? NULL);
+
+    if ($getLoggingInCheck['isLogged']){
+        $_SESSION['isLogged'] = true;
+        $_SESSION['userId'] = $getLoggingInCheck['userId'];
+        $_SESSION['email'] = $getLoggingInCheck['email'];
+        $_SESSION['firstname'] = $getLoggingInCheck['firstname'];
+        $_SESSION['lastname'] = $getLoggingInCheck['lastname'];
+        $_SESSION['image'] = $getLoggingInCheck['image'];
+    }
+
+    if (isset($_SESSION['isLogged'])){
+        header('Location: ../index.php');
+    }
+    
+?>
+
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -41,13 +64,13 @@
             <button type="submit" class="btn">Login</button>
             <p>
                 <?php 
-                    if (isset($_GET['message'])):
+                    if (isset($getLoggingInCheck['message'])):
                 ?>
-                    <p><?= $_GET['message'] ?></p>
+                    <p><?= $getLoggingInCheck['message']; ?></p>
                 <?php endif;?>
             </p>
             <div class="info">
-                <p>Don't have account? </p> <a href="./sign-up.html"> Create new account </a>
+                <p>Don't have account? </p> <a href="./sign-up.php"> Create new account </a>
             </div>
         </form>
     </section>

@@ -8,6 +8,7 @@ numberOfFilesInput.addEventListener('input', () => {
 			const inputFile = document.createElement('input');
 			inputFile.type = 'file';
 			inputFile.name = `file${i}`;
+			inputFile.required = true;
 			fileInputContainer.append(inputFile);
 		}
 	}

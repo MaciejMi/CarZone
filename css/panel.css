@@ -90,7 +90,7 @@ a {
   border-radius: 20px;
   width: 250px;
   height: 400px;
-  background-image: url("../img/welcome.jpg");
+  background-image: url("../img/offer2.jpg");
   border: 5px solid #fff;
   overflow: hidden;
 }
@@ -412,6 +412,7 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  max-width: 800px;
 }
 .edit-offer .file-container {
   display: flex;
@@ -516,6 +517,16 @@ a {
   padding: 1rem 3rem;
   background-color: #cc1b1b;
   border-radius: 10px;
+}
+
+input,
+p,
+textarea {
+  color: #fff;
+}
+
+p {
+  text-align: center;
 }
 
 @media (min-width: 576px) {

@@ -34,6 +34,7 @@ a {
 }
 
 .error {
+  text-align: center;
   color: #cc1b1b;
 }
 
@@ -50,6 +51,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.nav .profile_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.nav .profile_link img {
+  width: 5rem;
+  border-radius: 25px;
 }
 .nav__title {
   display: flex;
@@ -744,45 +755,6 @@ a {
   color: #fff;
 }
 
-.basket {
-  padding-top: 16rem;
-}
-.basket .section__text-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-.basket__list {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 15px;
-}
-.basket__list .card {
-  max-width: 800px;
-  text-align: center;
-  padding: 2rem;
-}
-.basket__list .card img {
-  width: 100%;
-}
-.basket__list .card .text {
-  padding: 1rem;
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-}
-.basket__list .card .text button {
-  position: absolute;
-  right: 20px;
-}
-.basket__list .btn {
-  padding: 1rem 3rem;
-  background-color: #cc1b1b;
-  color: #fff;
-  border-radius: 15px;
-}
-
 @media (min-width: 576px) {
   .header__image .bg-shadow .text-content h1 {
     font-size: 4.5rem;
@@ -829,6 +801,13 @@ a {
     width: 49%;
     font-size: 2rem;
   }
+  .account img {
+    max-height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
   .account div {
     justify-content: space-between;
     align-items: center;
@@ -838,6 +817,12 @@ a {
     width: 45%;
   }
 }
+.not-found {
+  text-align: center;
+  color: #000;
+  font-size: 2rem;
+}
+
 @media (min-width: 768px) {
   .nav__links--desktop {
     display: block;

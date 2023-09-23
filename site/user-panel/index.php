@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['isLogged'])){
+        header('Location: ../../index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -25,32 +33,30 @@
 
 <body>
     <nav class="nav">
-        <div class="wrapper">
-            <a href="../../index.html" class="nav__title">
-                <img src="../../img/logo.png" alt="">
+    <div class="wrapper">
+            <a href="../../index.php" class="nav__title">
+                <img src="../../img/logo.png" alt="carzone's logo">
                 Car Zone</a>
-            <a href="./my-account.html" class="nav__profile">
-                <img src="../../img/customer5.webp">
-                <p>Maciej</p>
+            <a href="#" class="nav__profile">
+            <img src="data:image/png;base64 , <?= base64_encode($_SESSION['image']) ?>" alt = "your profile image" > 
+                <p><?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?></p>
             </a>
         </div>
-    </nav>
     <header class="header">
         <div class="header__image">
             <div class="shadow">
                 <h1>Welcome in User Panel
-                    <span>Maciej</span>
+                     <span><?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?></span>
                 </h1>
             </div>
         </div>
         <div class="header__menu">
             <div class="cards">
-                <a href="./my-account.html" class="card">My Account</a>
-                <a href="./my-offers.html" class="card">Offers</a>
-                <a href="./my-balance.html" class="card">Balance</a>
-                <a href="./my-transactions.html" class="card">Transactions</a>
+                <a href="./my-account.php" class="card">My Account</a>
+                <a href="./my-offers.php" class="card">Offers</a>
+                <a href="../../components/logout.php" class="card">Log out</a>
             </div>
-            <a href="#" class="btn">Main site</a>
+            <a href="../../index.php" class="btn">Main site</a>
         </div>
     </header>
 </body>
