@@ -1,6 +1,5 @@
 # CarZone
 Online shop where you can buy used cars. 
-##### Currently, the project is finished only in terms of the frontend.
 
 ![image](https://github.com/MaciejMi/CarZone/assets/107648916/57de8c5d-ede1-43f1-88c9-15ec37b03973)
 
